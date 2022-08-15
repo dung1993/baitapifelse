@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 >DO YOU LOVE ME?</h1>
+    <input type="button" onclick="yesClick()" value="Yes" >
+    <input type="button" value="No" id="btnNo" onmouseover="noHover()" style="position: absolute;">
+</body>
+<script>
+    function yesClick(){
+        alert('Yes. Are You Right');
+    }
+    function noHover(){
+        let x = Math.round(Math.random()*window.innerWidth);
+        let y = Math.round(Math.random()*window.innerHeight);
+        document.getElementById('btnNo').style.left = x + "px";
+        document.getElementById("btnNo").style.top = y + "px";
+    }
+</script>
+</html>
