@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Kwh</td>
+                <td><input type="number" id="kwh" oninput="calcaulatorKwh()"></td>
+            </tr>
+            <tr>
+                <td>Pay Amount</td>
+                <td><input type="text" id="payAmont" readonly></td>
+            </tr>
+            <tr>
+                <td><button onclick="calculatorKwh()">Check!</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    const level50 = 50;
+    const level100 = 100;
+    const level200 = 200;
+    const level300 = 300;
+    const level400 = 400;
+    const over_400 = 401;
+
+    const pricelevel50 = 1678;
+    const pricelevel100 = 1734;
+    const pricelevel200 = 2014;
+    const pricelevel300 = 2536;
+    const pricelevel400 = 2834;
+    const priceover400 = 2927;
+
+    function calculatorKwh() {
+        let kwh = Number(document.querySelector('#Kwh').value);
+        let payAmont = Number(document.querySelector('#payAmont'));
+        switch (true) {
+            case kwh > 0 && kwh <= lever50: {
+                payAmont.value = pricelever50 * kwh;
+                break;
+            }
+            case kwh <= level_100: {
+                payAmont.value = (kwh - level50) * pricelevel100 + (pricelevel50 * level50);
+                break;
+            }
+            case kwh <= level200: {
+                payAmont.value = (kwh - level_100) * priceLevel_200 +
+                    level_100 * priceLevel_100 +
+                    level_50 * priceLevel_50;
+                break;
+            }
+            case kwh <= lever300: {
+                payAmont.value = (kwh - level200) * pricelevel300 + (level200 * pricelevel200) + (level_100 * priceLevel_100) +
+                    (level_50 * priceLevel_50);
+                break;
+            }
+            case kwh <= lever400: {
+                payAmont.value = (kwh - level300) * pricelevel400 + (level300 * pricelevel300) + (level200 * pricelevel200) + (level_100 * priceLevel_100) +
+                    (level_50 * priceLevel_50);
+                break;
+            }
+            case kwh > over_400: {
+                payAmont.value = (kwh - level400) * priceover400 + (level400 * pricelevel400) + (level300 * pricelevel300) + (lever200 * pricelevel200) + (level_100 * priceLevel_100) +
+                    (level_50 * priceLevel_50);
+            } default: {
+                payAmont.value = "sô kwh không hợp lệ";
+            }
+        }
+
+
+    }
+</script>
+
+</html>

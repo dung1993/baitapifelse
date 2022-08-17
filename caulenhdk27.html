@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phuongtrinhbac2</title>
+</head>
+<body>
+</body>
+<script>
+    let a = Number(prompt('a'));
+    let b = Number(prompt('b'));
+    let c = Number(prompt('c'));
+    let delta = b*b - 4*a*c;
+    if(delta==0 && a!=0){
+       alert((-b/2)*a);
+    }else if(delta<0 || a == 0 && b == 0){
+        alert('impossible equation');
+    }else {       
+        alert((-b + Math.sqrt(delta))/(2*a) + " và " + (-b - Math.sqrt(delta))/(2*a));
+    }
+</script>
+</html>
